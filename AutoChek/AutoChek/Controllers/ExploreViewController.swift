@@ -100,6 +100,7 @@ class ExploreViewController: UIViewController {
         addSubViews()
         addConstraints()
         brandCollectionView.register(BrandsCollectionViewCell.self, forCellWithReuseIdentifier: BrandsCollectionViewCell.identifier)
+        carMakeCollectionView.register(BrandsCollectionViewCell.self, forCellWithReuseIdentifier: BrandsCollectionViewCell.identifier)
     }
     
     func addSubViews() {
@@ -109,6 +110,7 @@ class ExploreViewController: UIViewController {
         view.addSubview(searchBar)
         view.addSubview(preferenceButton)
         view.addSubview(brandCollectionView)
+        view.addSubview(carMakeCollectionView)
     }
     
     func addConstraints() {
@@ -128,6 +130,11 @@ class ExploreViewController: UIViewController {
             brandCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             brandCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             brandCollectionView.heightAnchor.constraint(equalToConstant: 90),
+            carMakeCollectionView.topAnchor.constraint(equalTo: brandCollectionView.bottomAnchor, constant: 10),
+            carMakeCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            carMakeCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            carMakeCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            
         ])
     }
     
