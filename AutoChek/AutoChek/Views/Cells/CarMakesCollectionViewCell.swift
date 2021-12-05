@@ -22,7 +22,7 @@ class CarMakesCollectionViewCell: UICollectionViewCell {
     private let carImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "star")
+        imageView.image = UIImage(named: "carTest")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 50
@@ -91,13 +91,8 @@ class CarMakesCollectionViewCell: UICollectionViewCell {
         carDetailsView.addSubview(carName)
         carDetailsView.addSubview(carYear)
         carDetailsView.addSubview(carPrice)
-//        addSubview(carName)
-//        addSubview(carYear)
-//        addSubview(carImage)
-//        addSubview(carPrice)
-//        addSubview(carLocation)
-//        addSubview(carRating)
-//        addSubview(addButton)
+        carDetailsView.addSubview(carLocation)
+        carDetailsView.addSubview(addButton)
         
         NSLayoutConstraint.activate([
             carDetailsView.topAnchor.constraint(equalTo: topAnchor),
@@ -114,6 +109,10 @@ class CarMakesCollectionViewCell: UICollectionViewCell {
             carYear.leftAnchor.constraint(equalTo: carDetailsView.leftAnchor,constant: 10),
             carPrice.topAnchor.constraint(equalTo: carYear.bottomAnchor,constant: 5),
             carPrice.leftAnchor.constraint(equalTo: carDetailsView.leftAnchor,constant: 10),
+            carLocation.topAnchor.constraint(equalTo: carImage.bottomAnchor,constant: 10),
+            carLocation.rightAnchor.constraint(equalTo: carDetailsView.rightAnchor,constant: -10),
+            addButton.topAnchor.constraint(equalTo: carLocation.bottomAnchor,constant: 25),
+            addButton.rightAnchor.constraint(equalTo: carDetailsView.rightAnchor,constant: -10),
         ])
     }
 }
