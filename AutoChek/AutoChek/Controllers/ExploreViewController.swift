@@ -9,6 +9,7 @@ import UIKit
 
 class ExploreViewController: UIViewController {
     
+    let networkData = Network()
     
     // MARK: - Icon
     private let exploreIcon: UIImageView = {

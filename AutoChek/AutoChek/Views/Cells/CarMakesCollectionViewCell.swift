@@ -23,7 +23,7 @@ class CarMakesCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "carTest")
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 50
         return imageView
@@ -68,7 +68,9 @@ class CarMakesCollectionViewCell: UICollectionViewCell {
     private let addButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 17
+        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        button.layer.cornerRadius = 20
         button.backgroundColor = .black
         button.setTitleColor(.yellow, for: .normal)
         button.setTitle("+", for: .normal)
@@ -111,7 +113,7 @@ class CarMakesCollectionViewCell: UICollectionViewCell {
             carPrice.leftAnchor.constraint(equalTo: carDetailsView.leftAnchor,constant: 10),
             carLocation.topAnchor.constraint(equalTo: carImage.bottomAnchor,constant: 10),
             carLocation.rightAnchor.constraint(equalTo: carDetailsView.rightAnchor,constant: -10),
-            addButton.topAnchor.constraint(equalTo: carLocation.bottomAnchor,constant: 25),
+            addButton.topAnchor.constraint(equalTo: carLocation.bottomAnchor,constant: 20),
             addButton.rightAnchor.constraint(equalTo: carDetailsView.rightAnchor,constant: -10),
         ])
     }
