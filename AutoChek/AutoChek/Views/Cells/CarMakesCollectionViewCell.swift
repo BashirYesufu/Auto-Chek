@@ -13,13 +13,12 @@ class CarMakesCollectionViewCell: UICollectionViewCell {
     let carDetailsView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .link
+        view.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.00)
         view.layer.cornerRadius = 20
-        
         view.isUserInteractionEnabled = true
         return view
     }()
-    private let carImage: UIImageView = {
+    lazy var carImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "carTest")
@@ -28,7 +27,7 @@ class CarMakesCollectionViewCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 50
         return imageView
     }()
-    private let carName: UILabel = {
+    lazy var carName: UILabel = {
         let textView = UILabel()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.text = "Car Name"
@@ -36,7 +35,7 @@ class CarMakesCollectionViewCell: UICollectionViewCell {
         
         return textView
     }()
-    private let carYear: UILabel = {
+    lazy var carYear: UILabel = {
         let textView = UILabel()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.text = "Year"
@@ -44,21 +43,13 @@ class CarMakesCollectionViewCell: UICollectionViewCell {
         
         return textView
     }()
-    private let carPrice: UILabel = {
+    lazy var carPrice: UILabel = {
         let textView = UILabel()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.text = "N90,000"
         return textView
     }()
-    private let carRating: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "star")
-        return imageView
-    }()
-    private let carLocation: UILabel = {
+    lazy var carLocation: UILabel = {
         let textView = UILabel()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.text = "Lagos"
@@ -97,7 +88,7 @@ class CarMakesCollectionViewCell: UICollectionViewCell {
         carDetailsView.addSubview(addButton)
         
         NSLayoutConstraint.activate([
-            carDetailsView.topAnchor.constraint(equalTo: topAnchor),
+            carDetailsView.topAnchor.constraint(equalTo: topAnchor, constant: 60),
             carDetailsView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
             carDetailsView.bottomAnchor.constraint(equalTo: bottomAnchor),
             carDetailsView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
@@ -107,13 +98,13 @@ class CarMakesCollectionViewCell: UICollectionViewCell {
             carImage.bottomAnchor.constraint(equalTo: carDetailsView.bottomAnchor, constant: -100),
             carName.topAnchor.constraint(equalTo: carImage.bottomAnchor,constant: 10),
             carName.leftAnchor.constraint(equalTo: carDetailsView.leftAnchor,constant: 10),
-            carYear.topAnchor.constraint(equalTo: carName.bottomAnchor,constant: 5),
-            carYear.leftAnchor.constraint(equalTo: carDetailsView.leftAnchor,constant: 10),
-            carPrice.topAnchor.constraint(equalTo: carYear.bottomAnchor,constant: 5),
+            carLocation.topAnchor.constraint(equalTo: carName.bottomAnchor,constant: 5),
+            carLocation.leftAnchor.constraint(equalTo: carDetailsView.leftAnchor,constant: 10),
+            carPrice.topAnchor.constraint(equalTo: carLocation.bottomAnchor,constant: 5),
             carPrice.leftAnchor.constraint(equalTo: carDetailsView.leftAnchor,constant: 10),
-            carLocation.topAnchor.constraint(equalTo: carImage.bottomAnchor,constant: 10),
-            carLocation.rightAnchor.constraint(equalTo: carDetailsView.rightAnchor,constant: -10),
-            addButton.topAnchor.constraint(equalTo: carLocation.bottomAnchor,constant: 20),
+            carYear.topAnchor.constraint(equalTo: carImage.bottomAnchor,constant: 10),
+            carYear.rightAnchor.constraint(equalTo: carDetailsView.rightAnchor,constant: -10),
+            addButton.topAnchor.constraint(equalTo: carYear.bottomAnchor,constant: 20),
             addButton.rightAnchor.constraint(equalTo: carDetailsView.rightAnchor,constant: -10),
         ])
     }

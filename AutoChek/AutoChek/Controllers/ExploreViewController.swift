@@ -103,14 +103,14 @@ class ExploreViewController: UIViewController {
         addConstraints()
         brandCollectionView.register(BrandsCollectionViewCell.self, forCellWithReuseIdentifier: BrandsCollectionViewCell.identifier)
         carMakeCollectionView.register(CarMakesCollectionViewCell.self, forCellWithReuseIdentifier: CarMakesCollectionViewCell.identifier)
-        networkData.getMakeAndLogo { [weak self] data in
-            guard let strongSelf = self else { return }
-            strongSelf.logoAndName = data
-        }
-        networkData.getCarDetails { [weak self] data in
-            guard let strongSelf = self else { return }
-            strongSelf.carDetails = data
-            print(data)
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self, self != nil else { return }
+            strongSelf.networkData.getMakeAndLogo { data in
+                strongSelf.logoAndName = data
+            }
+            strongSelf.networkData.getCarDetails { data in
+                strongSelf.carDetails = data
+            }
         }
     }
     

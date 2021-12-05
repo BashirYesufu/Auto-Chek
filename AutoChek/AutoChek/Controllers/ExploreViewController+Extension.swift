@@ -14,7 +14,10 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var cellItems = 12
         if collectionView == brandCollectionView {
-            cellItems = logoAndName?.makeList.count ?? 12
+            cellItems = 12
+        }
+        if collectionView == carMakeCollectionView {
+            cellItems *= 2
         }
         return cellItems
     }
@@ -26,17 +29,28 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
         if collectionView  == brandCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BrandsCollectionViewCell.identifier, for: indexPath) as? BrandsCollectionViewCell else { return UICollectionViewCell() }
             
-            
-            let imageURL = self.logoAndName?.makeList[indexPath.item].imageUrl ?? ""
-            self.networkData.loadImage(imageURL, cell.brandLogo)
             DispatchQueue.main.async {
-                cell.brandLogo.kf.setImage(with: URL(string: imageURL))
-                cell.brandName.text = self.logoAndName?.makeList[indexPath.item].name
+                if let result = self.logoAndName?.makeList[indexPath.item] {
+                    self.networkData.loadImage(result.imageUrl, cell.brandLogo)
+                    cell.brandLogo.kf.setImage(with: URL(string: result.imageUrl))
+                    cell.brandName.text = result.name
+                }
             }
             finalCell = cell
         }
+        
         if collectionView  == carMakeCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarMakesCollectionViewCell.identifier, for: indexPath) as? CarMakesCollectionViewCell else { return UICollectionViewCell() }
+            
+            DispatchQueue.main.async {
+                if let result = self.carDetails?.result[indexPath.item] {
+                    cell.carImage.kf.setImage(with: URL(string: result.imageUrl))
+                    cell.carName.text = result.title
+                    cell.carYear.text = String(describing: result.year)
+                    cell.carPrice.text = String(describing: result.marketplacePrice)
+                    cell.carLocation.text = result.city
+                }
+            }
             finalCell = cell
         }
         return finalCell
