@@ -11,7 +11,7 @@ class BrandsCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "Cell"
     
-    private let brandLogo: UIImageView = {
+     lazy var brandLogo: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "filter")
@@ -21,7 +21,7 @@ class BrandsCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    private let brandName: UILabel = {
+    lazy var brandName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Nike"
@@ -47,7 +47,7 @@ class BrandsCollectionViewCell: UICollectionViewCell {
             brandName.centerXAnchor.constraint(equalTo: centerXAnchor),
             brandLogo.heightAnchor.constraint(equalToConstant: 60),
             brandName.topAnchor.constraint(equalTo: brandLogo.bottomAnchor, constant: 5)
-           
+            
         ])
     }
 }

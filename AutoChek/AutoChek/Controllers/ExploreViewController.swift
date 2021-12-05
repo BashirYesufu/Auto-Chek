@@ -10,7 +10,7 @@ import UIKit
 class ExploreViewController: UIViewController {
     
     let networkData = Network()
-    
+    var logoAndName: MakeAndLogoModel?    
     // MARK: - Icon
     private let exploreIcon: UIImageView = {
         let imageView = UIImageView()
@@ -102,6 +102,11 @@ class ExploreViewController: UIViewController {
         addConstraints()
         brandCollectionView.register(BrandsCollectionViewCell.self, forCellWithReuseIdentifier: BrandsCollectionViewCell.identifier)
         carMakeCollectionView.register(CarMakesCollectionViewCell.self, forCellWithReuseIdentifier: CarMakesCollectionViewCell.identifier)
+        networkData.getMakeAndLogo { [weak self] data in
+            guard let strongSelf = self else { return }
+            strongSelf.logoAndName = data
+            print(data)
+        }
     }
     
     func addSubViews() {

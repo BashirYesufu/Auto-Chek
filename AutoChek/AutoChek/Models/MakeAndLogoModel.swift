@@ -9,7 +9,6 @@ import Foundation
 
 struct MakeAndLogoModel: Codable {
     let makeList: [MakeList]
-    let pagination: Pagination
 }
 
 struct MakeList: Codable {
@@ -17,6 +16,3 @@ struct MakeList: Codable {
     let imageUrl: String
 }
 
-struct Pagination: Codable {
-    let total: Int
-}
