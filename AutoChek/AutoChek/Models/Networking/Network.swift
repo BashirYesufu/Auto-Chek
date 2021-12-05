@@ -48,7 +48,20 @@ class Network {
                         let json = try JSONDecoder().decode(CarDetailsModel.self, from: data)
                         completionHandler(json)
                     } catch {
-                        print("\(error)")
+                    }
+                }
+            }.resume()
+        }
+    }
+    
+    func getCarFeatures(_ url: String, completionHandler: @escaping (CarDetailsModel) -> ()) {
+        if let url = URL(string: url) {
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let data = data {
+                    do {
+                        let json = try JSONDecoder().decode(CarDetailsModel.self, from: data)
+                        completionHandler(json)
+                    } catch {
                     }
                 }
             }.resume()
