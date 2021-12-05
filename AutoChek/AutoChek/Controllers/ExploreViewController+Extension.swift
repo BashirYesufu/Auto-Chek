@@ -46,8 +46,8 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
                 if let result = self.carDetails?.result[indexPath.item] {
                     cell.carImage.kf.setImage(with: URL(string: result.imageUrl))
                     cell.carName.text = result.title
-                    cell.carYear.text = String(describing: result.year)
-                    cell.carPrice.text = String(describing: result.marketplacePrice)
+                    cell.carYear.text = "\(result.year)"
+                    cell.carPrice.text = "₦\(result.marketplacePrice)"
                     cell.carLocation.text = result.city
                 }
             }

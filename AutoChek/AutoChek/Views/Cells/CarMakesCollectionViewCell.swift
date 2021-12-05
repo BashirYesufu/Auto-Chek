@@ -46,7 +46,7 @@ class CarMakesCollectionViewCell: UICollectionViewCell {
     lazy var carPrice: UILabel = {
         let textView = UILabel()
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.text = "N90,000"
+        textView.text = "₦900,000"
         return textView
     }()
     lazy var carLocation: UILabel = {

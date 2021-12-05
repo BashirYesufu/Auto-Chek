@@ -24,7 +24,7 @@ class BrandsCollectionViewCell: UICollectionViewCell {
     lazy var brandName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Nike"
+        label.text = "Brand"
         return label
     }()
     
