@@ -84,13 +84,13 @@ class ExploreViewController: UIViewController {
     lazy var carMakeCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 15
+        layout.minimumLineSpacing = 100
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .white
-        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.isUserInteractionEnabled = true
         return collectionView
     }()
@@ -100,7 +100,7 @@ class ExploreViewController: UIViewController {
         addSubViews()
         addConstraints()
         brandCollectionView.register(BrandsCollectionViewCell.self, forCellWithReuseIdentifier: BrandsCollectionViewCell.identifier)
-        carMakeCollectionView.register(BrandsCollectionViewCell.self, forCellWithReuseIdentifier: BrandsCollectionViewCell.identifier)
+        carMakeCollectionView.register(CarMakesCollectionViewCell.self, forCellWithReuseIdentifier: CarMakesCollectionViewCell.identifier)
     }
     
     func addSubViews() {

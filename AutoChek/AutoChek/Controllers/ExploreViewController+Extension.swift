@@ -13,15 +13,27 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BrandsCollectionViewCell.identifier, for: indexPath)
+        
+        var cell = UICollectionViewCell()
+        if collectionView  == brandCollectionView {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: BrandsCollectionViewCell.identifier, for: indexPath)
+        }
+        if collectionView  == carMakeCollectionView {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarMakesCollectionViewCell.identifier, for: indexPath)
+            
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        var size: CGSize = CGSize()
         if collectionView  == brandCollectionView {
-            return CGSize(width: 80, height: 80)
-        } else {
-            return CGSize(width: view.frame.width, height: 350)
+            size = CGSize(width: 80, height: 80)
         }
+        if collectionView  == carMakeCollectionView {
+            size = CGSize(width: view.frame.width - 20, height: 400)
+        }
+        return size
     }
 }
