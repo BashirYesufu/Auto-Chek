@@ -14,7 +14,7 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var cellItems = 12
         if collectionView == brandCollectionView {
-        cellItems = logoAndName?.makeList.count ?? 12
+            cellItems = logoAndName?.makeList.count ?? 12
         }
         return cellItems
     }
@@ -26,14 +26,13 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
         if collectionView  == brandCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BrandsCollectionViewCell.identifier, for: indexPath) as? BrandsCollectionViewCell else { return UICollectionViewCell() }
             
-            let imageURL = logoAndName?.makeList[indexPath.item].imageUrl ?? ""
             
+            let imageURL = self.logoAndName?.makeList[indexPath.item].imageUrl ?? ""
+            self.networkData.loadImage(imageURL, cell.brandLogo)
             DispatchQueue.main.async {
-                self.networkData.loadImage(imageURL, cell.brandLogo)
                 cell.brandLogo.kf.setImage(with: URL(string: imageURL))
                 cell.brandName.text = self.logoAndName?.makeList[indexPath.item].name
             }
-            
             finalCell = cell
         }
         if collectionView  == carMakeCollectionView {

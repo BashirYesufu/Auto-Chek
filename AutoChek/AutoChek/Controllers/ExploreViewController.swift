@@ -10,7 +10,8 @@ import UIKit
 class ExploreViewController: UIViewController {
     
     let networkData = Network()
-    var logoAndName: MakeAndLogoModel?    
+    var logoAndName: MakeAndLogoModel?
+    var carDetails: CarDetailsModel?
     // MARK: - Icon
     private let exploreIcon: UIImageView = {
         let imageView = UIImageView()
@@ -105,6 +106,10 @@ class ExploreViewController: UIViewController {
         networkData.getMakeAndLogo { [weak self] data in
             guard let strongSelf = self else { return }
             strongSelf.logoAndName = data
+        }
+        networkData.getCarDetails { [weak self] data in
+            guard let strongSelf = self else { return }
+            strongSelf.carDetails = data
             print(data)
         }
     }

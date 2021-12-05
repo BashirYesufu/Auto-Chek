@@ -12,6 +12,7 @@
 		041CC20A275BCE3A00910653 /* CarMakesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC209275BCE3A00910653 /* CarMakesCollectionViewCell.swift */; };
 		041CC20C275CDFC400910653 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC20B275CDFC400910653 /* Network.swift */; };
 		041CC20E275CE0B700910653 /* MakeAndLogoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC20D275CE0B700910653 /* MakeAndLogoModel.swift */; };
+		041CC211275D06A400910653 /* CarDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC210275D06A400910653 /* CarDetailsModel.swift */; };
 		048D6814275A9C21001C3F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D6813275A9C21001C3F64 /* AppDelegate.swift */; };
 		048D6816275A9C21001C3F64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D6815275A9C21001C3F64 /* SceneDelegate.swift */; };
 		048D681D275A9C22001C3F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048D681C275A9C22001C3F64 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		041CC209275BCE3A00910653 /* CarMakesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMakesCollectionViewCell.swift; sourceTree = "<group>"; };
 		041CC20B275CDFC400910653 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		041CC20D275CE0B700910653 /* MakeAndLogoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAndLogoModel.swift; sourceTree = "<group>"; };
+		041CC210275D06A400910653 /* CarDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsModel.swift; sourceTree = "<group>"; };
 		048D6810275A9C21001C3F64 /* AutoChek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoChek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048D6813275A9C21001C3F64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		048D6815275A9C21001C3F64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,15 @@
 				041CC209275BCE3A00910653 /* CarMakesCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		041CC20F275D068300910653 /* NetworkModels */ = {
+			isa = PBXGroup;
+			children = (
+				041CC20D275CE0B700910653 /* MakeAndLogoModel.swift */,
+				041CC210275D06A400910653 /* CarDetailsModel.swift */,
+			);
+			path = NetworkModels;
 			sourceTree = "<group>";
 		};
 		048D6807275A9C21001C3F64 = {
@@ -95,8 +106,8 @@
 		048D6827275A9C3C001C3F64 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				041CC20F275D068300910653 /* NetworkModels */,
 				048D6832275AA08F001C3F64 /* Networking */,
-				041CC20D275CE0B700910653 /* MakeAndLogoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,7 +178,6 @@
 				5EDE2C806F5FC5B3C6619691 /* Pods-AutoChek.debug.xcconfig */,
 				6A7A381E130A992674D032C7 /* Pods-AutoChek.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -294,6 +304,7 @@
 				041CC208275BB67D00910653 /* BrandsCollectionViewCell.swift in Sources */,
 				048D6816275A9C21001C3F64 /* SceneDelegate.swift in Sources */,
 				041CC20A275BCE3A00910653 /* CarMakesCollectionViewCell.swift in Sources */,
+				041CC211275D06A400910653 /* CarDetailsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

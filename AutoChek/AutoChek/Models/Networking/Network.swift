@@ -7,12 +7,13 @@
 
 import UIKit
 import SVGKit
+import Kingfisher
 
 class Network {
     //MARK: - Method to get data for make and logo
-   public func getMakeAndLogo(completionHandler: @escaping (MakeAndLogoModel) -> ()) {
+    func getMakeAndLogo(completionHandler: @escaping (MakeAndLogoModel) -> ()) {
         let url = "https://api-prod.autochek.africa/v1/inventory/make?popular=true"
-                if let url = URL(string: url) {
+        if let url = URL(string: url) {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
                     do {
@@ -29,11 +30,28 @@ class Network {
     func loadImage(_ urlString: String, _ imageView: UIImageView){
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { data, _, error in
-            guard error == nil else { return }
+            guard error == nil,
+                  let image: SVGKImage = SVGKImage(contentsOf: url) else { return }
             DispatchQueue.main.async {
-                guard let image: SVGKImage = SVGKImage(contentsOf: url) else { return }
                 imageView.image = image.uiImage
             }
         }.resume()
+    }
+    
+    func getCarDetails(completionHandler: @escaping (CarDetailsModel) -> ()) {
+        let url = "https://api-prod.autochek.africa/v1/inventory/car/search"
+        
+        if let url = URL(string: url) {
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let data = data {
+                    do {
+                        let json = try JSONDecoder().decode(CarDetailsModel.self, from: data)
+                        completionHandler(json)
+                    } catch {
+                        print("\(error)")
+                    }
+                }
+            }.resume()
+        }
     }
 }
