@@ -54,7 +54,8 @@ class Network {
         }
     }
     
-    func getCarFeatures(_ url: String, completionHandler: @escaping (CarFeature) -> ()) {
+    func getCarFeatures(_ carID: String, completionHandler: @escaping (CarFeature) -> ()) {
+        let url = "https://api-prod.autochek.africa/v1/inventory/car/\(carID)"
         if let url = URL(string: url) {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {

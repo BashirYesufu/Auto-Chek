@@ -32,7 +32,6 @@ class CarMakesCollectionViewCell: UICollectionViewCell {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.text = "Car Name"
         textView.font = UIFont.boldSystemFont(ofSize: 18)
-        
         return textView
     }()
     lazy var carYear: UILabel = {
