@@ -73,9 +73,9 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
         if collectionView == carMakeCollectionView {
             if let carId = self.carDetails?.result[indexPath.item].id {
                 let viewController = CarFeaturesViewController()
-                let urlString = "https://api-prod.autochek.africa/v1/inventory/car/\(carId)"
-                networkData.getCarFeatures(urlString) { data in
-                    viewController.carFeatures = data
+                networkData.getCarFeatures(carId) { data in
+                    viewController.getData(data)
+                    print(data)
                 }
                 navigationController?.pushViewController(viewController, animated: true)
             }
