@@ -68,4 +68,19 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
         return size
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == carMakeCollectionView {
+            if let carId = self.carDetails?.result[indexPath.item].id {
+                let viewController = CarFeaturesViewController()
+                let urlString = "https://api-prod.autochek.africa/v1/inventory/car/\(carId)"
+                print(carId)
+                networkData.getCarFeatures(urlString) { data in
+                    viewController.carFeatures = data
+                    print(data)
+                }
+                navigationController?.pushViewController(viewController, animated: true)
+            }
+        }
+    }
 }

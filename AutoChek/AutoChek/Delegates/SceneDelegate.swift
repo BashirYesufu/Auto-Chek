@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let rootViewController = CarFeaturesViewController()
+        let rootViewController = ExploreViewController()
         
         let navigationController = UINavigationController(rootViewController: rootViewController)
         

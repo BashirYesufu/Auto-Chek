@@ -9,14 +9,15 @@ import UIKit
 
 class CarFeaturesViewController: UIViewController {
 
-    let scroller: UIScrollView = {
+    var carFeatures: CarFeature?
+    private let scroller: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
         scroll.backgroundColor = .yellow
         return scroll
     }()
     
-    let carImage: UIImageView = {
+    private let carImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -24,6 +25,7 @@ class CarFeaturesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(carFeatures)
         view.addSubview(scroller)
         NSLayoutConstraint.activate([
             scroller.topAnchor.constraint(equalTo: view.topAnchor),
@@ -32,6 +34,4 @@ class CarFeaturesViewController: UIViewController {
             scroller.rightAnchor.constraint(equalTo: view.rightAnchor),
         ])
     }
-
-
 }
