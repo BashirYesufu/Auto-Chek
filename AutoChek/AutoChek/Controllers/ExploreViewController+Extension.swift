@@ -17,7 +17,7 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
             cellItems = 12
         }
         if collectionView == carMakeCollectionView {
-            cellItems *= 2
+            cellItems = 24
         }
         return cellItems
     }
@@ -50,7 +50,9 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
                     cell.carPrice.text = "₦\(result.marketplacePrice)"
                     cell.carLocation.text = result.city
                 }
+               
             }
+//            collectionView.reloadData()
             finalCell = cell
         }
         return finalCell
@@ -73,10 +75,7 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
         if collectionView == carMakeCollectionView {
             if let carId = self.carDetails?.result[indexPath.item].id {
                 let viewController = CarFeaturesViewController()
-                networkData.getCarFeatures(carId) { data in
-                    viewController.getData(data)
-                    print(data)
-                }
+                viewController.carID = carId
                 navigationController?.pushViewController(viewController, animated: true)
             }
         }
