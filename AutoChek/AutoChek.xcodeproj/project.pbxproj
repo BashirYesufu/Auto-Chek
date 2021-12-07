@@ -21,6 +21,12 @@
 		048D6820275A9C22001C3F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048D681E275A9C22001C3F64 /* LaunchScreen.storyboard */; };
 		048D682F275A9DAC001C3F64 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D682E275A9DAC001C3F64 /* ExploreViewController.swift */; };
 		048D6831275A9EF8001C3F64 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D6830275A9EF8001C3F64 /* ExploreView.swift */; };
+		04E9D576275F52E60080688E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D575275F52E60080688E /* TabBarViewController.swift */; };
+		04E9D578275F53220080688E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D577275F53220080688E /* HomeViewController.swift */; };
+		04E9D57A275F53340080688E /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D579275F53340080688E /* FavoriteViewController.swift */; };
+		04E9D57C275F53470080688E /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D57B275F53470080688E /* CartViewController.swift */; };
+		04E9D57E275F535C0080688E /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D57D275F535C0080688E /* NotificationsViewController.swift */; };
+		04E9D580275F53750080688E /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D57F275F53750080688E /* ChatsViewController.swift */; };
 		1B48F4835F3F7390BA843209 /* Pods_AutoChek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C10C90ACA59355FF83F170F9 /* Pods_AutoChek.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +47,12 @@
 		048D6821275A9C22001C3F64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048D682E275A9DAC001C3F64 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		048D6830275A9EF8001C3F64 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		04E9D575275F52E60080688E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		04E9D577275F53220080688E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		04E9D579275F53340080688E /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		04E9D57B275F53470080688E /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		04E9D57D275F535C0080688E /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		04E9D57F275F53750080688E /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		5EDE2C806F5FC5B3C6619691 /* Pods-AutoChek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoChek.debug.xcconfig"; path = "Target Support Files/Pods-AutoChek/Pods-AutoChek.debug.xcconfig"; sourceTree = "<group>"; };
 		6A7A381E130A992674D032C7 /* Pods-AutoChek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoChek.release.xcconfig"; path = "Target Support Files/Pods-AutoChek/Pods-AutoChek.release.xcconfig"; sourceTree = "<group>"; };
 		C10C90ACA59355FF83F170F9 /* Pods_AutoChek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoChek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +142,7 @@
 		048D682A275A9C6A001C3F64 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04E9D574275F52820080688E /* TabBarControllers */,
 				048D682E275A9DAC001C3F64 /* ExploreViewController.swift */,
 				041CC204275BB5DF00910653 /* ExploreViewController+Extension.swift */,
 				041CC212275D794300910653 /* CarFeaturesViewController.swift */,
@@ -168,6 +181,19 @@
 				041CC20B275CDFC400910653 /* Network.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		04E9D574275F52820080688E /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				04E9D575275F52E60080688E /* TabBarViewController.swift */,
+				04E9D577275F53220080688E /* HomeViewController.swift */,
+				04E9D579275F53340080688E /* FavoriteViewController.swift */,
+				04E9D57B275F53470080688E /* CartViewController.swift */,
+				04E9D57D275F535C0080688E /* NotificationsViewController.swift */,
+				04E9D57F275F53750080688E /* ChatsViewController.swift */,
+			);
+			path = TabBarControllers;
 			sourceTree = "<group>";
 		};
 		DD1B76C927705EC05A03E89A /* Frameworks */ = {
@@ -305,13 +331,19 @@
 				048D6814275A9C21001C3F64 /* AppDelegate.swift in Sources */,
 				041CC20C275CDFC400910653 /* Network.swift in Sources */,
 				041CC213275D794300910653 /* CarFeaturesViewController.swift in Sources */,
+				04E9D57A275F53340080688E /* FavoriteViewController.swift in Sources */,
 				041CC205275BB5DF00910653 /* ExploreViewController+Extension.swift in Sources */,
+				04E9D578275F53220080688E /* HomeViewController.swift in Sources */,
 				048D6831275A9EF8001C3F64 /* ExploreView.swift in Sources */,
 				041CC20E275CE0B700910653 /* MakeAndLogoModel.swift in Sources */,
+				04E9D57E275F535C0080688E /* NotificationsViewController.swift in Sources */,
 				041CC215275D81DB00910653 /* CarFeaturesModel.swift in Sources */,
 				041CC208275BB67D00910653 /* BrandsCollectionViewCell.swift in Sources */,
 				048D6816275A9C21001C3F64 /* SceneDelegate.swift in Sources */,
+				04E9D57C275F53470080688E /* CartViewController.swift in Sources */,
+				04E9D576275F52E60080688E /* TabBarViewController.swift in Sources */,
 				041CC20A275BCE3A00910653 /* CarMakesCollectionViewCell.swift in Sources */,
+				04E9D580275F53750080688E /* ChatsViewController.swift in Sources */,
 				041CC211275D06A400910653 /* CarDetailsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
