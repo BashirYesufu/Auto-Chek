@@ -77,7 +77,7 @@ class CarFeaturesViewController: UIViewController {
     lazy var carColors: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Interior: Black\nExterior: Sliver"
+        label.text = "Interior: Black"
         label.numberOfLines = 2
         return label
     }()
@@ -106,13 +106,19 @@ class CarFeaturesViewController: UIViewController {
         networkData.getCarFeatures(carID) { [weak self] data in
             guard let strongSelf = self else { return }
             strongSelf.carFeatures = data
-            print(strongSelf.carFeatures)
             if let data = strongSelf.carFeatures {
                 DispatchQueue.main.async {
-                    strongSelf.networkData.loadImage(data.bodyType.imageUrl, strongSelf.carImage)
-                    strongSelf.carImage.kf.setImage(with: URL(string: data.bodyType.imageUrl))
+                    strongSelf.networkData.loadImage(data.imageUrl, strongSelf.carImage)
+                    strongSelf.carImage.kf.setImage(with: URL(string: data.imageUrl))
                     strongSelf.carName.text = data.carName
-                    print(data.bodyType.imageUrl)
+                    strongSelf.carLocation.text = "\(data.city), \(data.state)"
+                    strongSelf.carPrice.text = "₦\(data.marketplacePrice)"
+                    strongSelf.carMilage.text = "\(data.mileage) \(data.mileageUnit)"
+                    strongSelf.carTransmission.text = "Transmission: \(data.transmission)"
+                    strongSelf.carFuelType.text = "Fuel Type: \(data.fuelType)"
+                    strongSelf.carEngine.text = "Engine: \(data.engineType)"
+                    strongSelf.carWheels.text = "Wheels: \(data.model.wheelType)"
+                    strongSelf.carColors.text = "Interior: \(data.interiorColor), Exterior: \(data.exteriorColor)"
                 }
             }
         }
