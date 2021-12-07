@@ -20,9 +20,7 @@
 		048D681D275A9C22001C3F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048D681C275A9C22001C3F64 /* Assets.xcassets */; };
 		048D6820275A9C22001C3F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048D681E275A9C22001C3F64 /* LaunchScreen.storyboard */; };
 		048D682F275A9DAC001C3F64 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D682E275A9DAC001C3F64 /* ExploreViewController.swift */; };
-		048D6831275A9EF8001C3F64 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D6830275A9EF8001C3F64 /* ExploreView.swift */; };
 		04E9D576275F52E60080688E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D575275F52E60080688E /* TabBarViewController.swift */; };
-		04E9D578275F53220080688E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D577275F53220080688E /* HomeViewController.swift */; };
 		04E9D57A275F53340080688E /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D579275F53340080688E /* FavoriteViewController.swift */; };
 		04E9D57C275F53470080688E /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D57B275F53470080688E /* CartViewController.swift */; };
 		04E9D57E275F535C0080688E /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9D57D275F535C0080688E /* NotificationsViewController.swift */; };
@@ -46,9 +44,7 @@
 		048D681F275A9C22001C3F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		048D6821275A9C22001C3F64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048D682E275A9DAC001C3F64 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
-		048D6830275A9EF8001C3F64 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		04E9D575275F52E60080688E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		04E9D577275F53220080688E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04E9D579275F53340080688E /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		04E9D57B275F53470080688E /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		04E9D57D275F535C0080688E /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -134,7 +130,6 @@
 			children = (
 				041CC206275BB65200910653 /* Cells */,
 				048D682D275A9CEE001C3F64 /* StoryBoards */,
-				048D6830275A9EF8001C3F64 /* ExploreView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				04E9D575275F52E60080688E /* TabBarViewController.swift */,
-				04E9D577275F53220080688E /* HomeViewController.swift */,
 				04E9D579275F53340080688E /* FavoriteViewController.swift */,
 				04E9D57B275F53470080688E /* CartViewController.swift */,
 				04E9D57D275F535C0080688E /* NotificationsViewController.swift */,
@@ -333,8 +327,6 @@
 				041CC213275D794300910653 /* CarFeaturesViewController.swift in Sources */,
 				04E9D57A275F53340080688E /* FavoriteViewController.swift in Sources */,
 				041CC205275BB5DF00910653 /* ExploreViewController+Extension.swift in Sources */,
-				04E9D578275F53220080688E /* HomeViewController.swift in Sources */,
-				048D6831275A9EF8001C3F64 /* ExploreView.swift in Sources */,
 				041CC20E275CE0B700910653 /* MakeAndLogoModel.swift in Sources */,
 				04E9D57E275F535C0080688E /* NotificationsViewController.swift in Sources */,
 				041CC215275D81DB00910653 /* CarFeaturesModel.swift in Sources */,

@@ -21,12 +21,11 @@ class TabBarViewController: UITabBarController {
         navigationController?.isNavigationBarHidden = true
         self.setViewControllers([homeViewController, favoriteViewController, cartViewController, notificationViewController, chatViewController], animated: false)
         guard let items = self.tabBar.items else { return }
-        let images = ["house.fill", "magnifyingglass","bag", "bell.fill", "message.fill"]
+        let images = ["house.fill", "heart.fill","bag.fill", "bell.fill", "message.fill"]
         for item in 0...4 {
-          items[item].image = UIImage(systemName: images[item])
+            items[item].image = UIImage(systemName: images[item])
         }
-        
-        self.tabBar.tintColor = .gray
+        self.tabBar.tintColor = .black
     }
     
     
